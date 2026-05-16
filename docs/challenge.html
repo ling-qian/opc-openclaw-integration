@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>揭榜挂帅 — OPC 创业挑战</title>
+<meta name="description" content="OPC揭榜挂帅 - 解决技术难题，赢取丰厚奖励。连接全球创新力量，攻克AI、科技、商业领域的关键挑战。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="kondratiev.css">
+<link rel="stylesheet" href="challenge.css">
+<style>
+/* 复用主页的导航和其他基础样式 */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root {
+    --bg: #09090b;
+    --bg2: #0f0f13;
+    --bg3: #18181b;
+    --card: #1c1c21;
+    --card2: #222228;
+    --card3: #2a2a32;
+    --border: #27272a;
+    --border2: #3f3f46;
+    --text: #fafafa;
+    --text2: #a1a1aa;
+    --text3: #71717a;
+    --gold: #e2b64f;
+    --gold2: #f5d98a;
+    --green: #22c55e;
+    --blue: var(--gold);
+    --purple: #a78bfa;
+    --orange: #f59e0b;
+    --red: #ef4444;
+    --serif: 'Noto Serif SC', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --radius-xs: 6px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+html{scroll-behavior:smooth}body{font-family:'Inter','Noto Sans SC',-apple-system,sans-serif;background:var(--bg);color:var(--t1);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--gold);color:#fff}a{color:inherit;text-decoration:none}
+
+/* NAV - 统一样式 */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;background:rgba(6,6,10,0.6);backdrop-filter:blur(20px) saturate(1.8);-webkit-backdrop-filter:blur(20px) saturate(1.8);border-bottom:1px solid var(--bdr);transition:all .4s}
+.nav.on{background:rgba(6,6,10,0.93);box-shadow:0 2px 40px rgba(0,0,0,0.5)}
+.nav-i{max-width:1120px;margin:0 auto;padding:0 28px;height:100%;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:9px;font-weight:500;font-size:14px;letter-spacing:0;font-family:'Noto Sans SC','Inter',-apple-system,sans-serif}
+.nav-logo .mk{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--gold),var(--c));display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#fff;box-shadow:0 0 20px var(--gw)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nl{padding:8px 14px;border-radius:8px;color:var(--t2);font-size:14px;font-weight:400;transition:all .2s var(--ease);position:relative;font-family:'Noto Sans SC','Inter',-apple-system,sans-serif;letter-spacing:0}
+.nl:hover{color:var(--t1);background:rgba(255,255,255,0.035)}
+.nl.active{color:var(--t1);background:rgba(255,255,255,0.05)}
+.lg{padding:6px 14px;border-radius:8px;border:1px solid var(--bdr2);background:transparent;color:var(--t2);font-size:14px;font-weight:400;cursor:pointer;transition:all .25s;margin-left:8px;font-family:'Noto Sans SC','Inter',-apple-system,sans-serif;letter-spacing:0}
+.lg:hover{border-color:var(--bdr2);color:var(--t1);background:rgba(255,255,255,0.03)}
+
+/* 粒子背景 */
+.particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.particle{position:absolute;width:4px;height:4px;background:var(--gold);border-radius:50%;opacity:.3;animation:float 20s linear infinite}
+@keyframes float{
+  0%{transform:translateY(100vh) rotate(0deg);opacity:0}
+  10%{opacity:.3}
+  90%{opacity:.3}
+  100%{transform:translateY(-100vh) rotate(720deg);opacity:0}
+}
+
+/* 滚动显示动画 */
+.fade-in{opacity:0;transform:translateY(30px);transition:all .6s var(--ease)}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+
+<meta property="og:title" content="OPC 挑战赛 — 实战演练，加速成长">
+<meta property="og:description" content="参与创业挑战赛，与全球OPC创业者同台竞技，通过实战项目验证商业模式，赢取丰厚奖励。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mokangmedical.github.io/opc-platform/challenge.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mokangmedical.github.io/opc-platform/challenge.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+</head>
+<body>
+<!-- NAV -->
+<nav class="nav" id="nav">
+<div class="nav-i">
+<a href="index.html" class="nav-logo"><span class="mk">◆</span> OPC Platform</a>
+<div class="nav-links">
+<a href="service.html" class="nl">创业助手</a>
+<a href="platform.html" class="nl">平台</a>
+<a href="government.html" class="nl">揭榜挂帅</a>
+<a href="challenge.html" class="nl"><span class="zh">揭榜</span><span class="en" style="display:none">Challenge</span></a>
+<a href="superagent.html" class="nl">超级个体</a>
+<a href="legends.html" class="nl">名人堂</a>
+<a href="academy.html" class="nl">学院</a>
+<a href="policy.html" class="nl">政策</a>
+<a href="community.html" class="nl">社区</a>
+<button class="lg" onclick="togLang()">🌐 EN/中</button>
+</div>
+<button class="mob" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">☰</button>
+</div>
+</nav>
+
+<!-- 导航栏 -->
+
+
+<!-- 主内容区 -->
+<div class="challenge-page">
+  <!-- 头部区域 -->
+  <section class="challenge-hero">
+    <!-- 粒子背景 -->
+    <div class="particles" id="particles"></div>
+    
+    <div class="hero-badge">
+      <span class="pulse"></span>
+      <span>实时更新</span>
+    </div>
+    
+    <h1>揭榜挂帅</h1>
+    <p class="subtitle">连接全球创新力量，攻克AI、科技、商业领域的关键挑战。<br>解决技术难题，赢取丰厚奖励。</p>
+    
+    <!-- 统计数据 -->
+    <div class="stats-grid">
+      <div class="stat-card fade-in">
+        <div class="number" data-target="67">0</div>
+        <div class="label">进行中项目</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="number" data-target="2580">0</div>
+        <div class="label">累计申报</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="number" data-target="156">0</div>
+        <div class="label">万元奖金池</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="number" data-target="89">0</div>
+        <div class="label">成功揭榜</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 筛选区域 -->
+  <section class="filter-section fade-in">
+    <div class="filter-bar">
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">全部项目</button>
+        <button class="filter-tab" data-filter="ai">人工智能</button>
+        <button class="filter-tab" data-filter="tech">技术攻关</button>
+        <button class="filter-tab" data-filter="business">商业创新</button>
+        <button class="filter-tab" data-filter="research">科研难题</button>
+      </div>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input type="text" placeholder="搜索项目名称、关键词..." id="searchInput">
+      </div>
+    </div>
+  </section>
+
+  <!-- 项目列表 -->
+  <section class="projects-section">
+    <div class="projects-grid" id="projectsGrid">
+      <!-- 项目卡片将通过JS动态加载 -->
+    </div>
+  </section>
+</div>
+
+<!-- 加载动画 -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loading-spinner"></div>
+</div>
+
+<script>
+    // API配置
+    const API_BASE = '/api';
+
+    // 项目数据 - 从后端加载
+    let allProjects = [];
+
+    // 从后端API加载项目
+    async function loadProjects() {
+      if (loadingOverlay) loadingOverlay.classList.add('show');
+      try {
+        const resp = await fetch(`${API_BASE}/government/?sort=deadline&limit=50`);
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const data = await resp.json();
+        allProjects = data.map(p => ({
+          id: 'proj-' + p.id,
+          title: p.title,
+          description: p.description || '暂无描述',
+          category: (p.industry || '').toLowerCase().includes('ai') ? 'ai' :
+                    (p.industry || '').toLowerCase().includes('tech') ? 'tech' :
+                    (p.industry || '').toLowerCase().includes('business') ? 'business' : 'research',
+          reward: p.budget_max || p.budget_min || 0,
+          deadline: p.deadline || '',
+          applicants: p.application_count || 0,
+          status: p.status || 'active',
+          badge: (p.days_left != null && p.days_left <= 7) ? 'urgent' :
+                 (p.application_count >= 20) ? 'hot' :
+                 (p.is_featured) ? 'new' : 'active',
+          tags: p.tags || [],
+          publisher: p.publisher || '政府项目'
+        }));
+        // 更新统计数字
+        updateStatsFromData(data);
+      } catch (e) {
+        console.warn('后端未连接:', e.message);
+        allProjects = [];
+      } finally {
+        if (loadingOverlay) loadingOverlay.classList.remove('show');
+      }
+      filterProjects();
+    }
+
+    // 从API数据更新统计
+    function updateStatsFromData(data) {
+      const active = data.filter(p => p.status === 'active').length;
+      const total = data.reduce((sum, p) => sum + (p.application_count || 0), 0);
+      const budget = data.reduce((sum, p) => sum + (p.budget_max || 0), 0);
+      // Update stat cards
+      const statCards = document.querySelectorAll('.stat-card .number');
+      if (statCards[0]) statCards[0].dataset.target = String(active || data.length);
+      if (statCards[1]) statCards[1].dataset.target = String(total);
+      if (statCards[2]) statCards[2].dataset.target = String(Math.round(budget / 10000));
+      if (statCards[3]) statCards[3].dataset.target = String(data.filter(p => p.status === 'completed').length);
+    }
+
+    // DOM元素
+    const projectsGrid = document.getElementById('projectsGrid');
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const searchInput = document.getElementById('searchInput');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+
+    // 当前筛选状态
+    let currentFilter = 'all';
+    let searchKeyword = '';
+
+    // 渲染项目卡片
+    function renderProjects(projects) {
+      if (!projectsGrid) return;
+      if (projects.length === 0) {
+        projectsGrid.innerHTML = `<div class="empty-state"><div class="empty-icon">📭</div><div class="empty-text">暂无匹配项目</div><div class="empty-desc">请尝试调整筛选条件或搜索关键词</div></div>`;
+        return;
+      }
+      projectsGrid.innerHTML = projects.map((project, index) => `<div class="project-card fade-in" style="animation-delay: ${index * 0.1}s" data-id="${project.id}"><div class="card-header"><span class="card-badge badge-${project.badge}">${project.badge === 'hot' ? '🔥 热门' : project.badge === 'new' ? '✨ 新发布' : project.badge === 'urgent' ? '⚠️ 紧急' : '🟢 进行中'}</span><div class="card-reward">¥${formatNumber(project.reward)}</div></div><div class="card-body"><h3 class="card-title">${project.title}</h3><p class="card-desc">${project.description}</p><div class="card-tags">${project.tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div><div class="card-meta"><div class="meta-item"><div class="value">${project.applicants}</div><div class="label">申报数</div></div><div class="meta-item"><div class="value">${getDaysLeft(project.deadline)}</div><div class="label">剩余天数</div></div><div class="meta-item"><div class="value">${getCategoryName(project.category)}</div><div class="label">项目类型</div></div></div></div><div class="card-footer"><button class="btn btn-detail" onclick="goToDetail('${project.id}')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>查看详情</button><button class="btn btn-apply" onclick="goToApply('${project.id}')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>立即申报</button></div></div>`).join('');
+
+      setTimeout(() => {
+        document.querySelectorAll('.fade-in').forEach((el, i) => {
+          setTimeout(() => el.classList.add('visible'), i * 100);
+        });
+      }, 100);
+    }
+
+    // 格式化数字
+    function formatNumber(num) { return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+    // 计算剩余天数
+    function getDaysLeft(deadline) { const now = new Date(); const end = new Date(deadline); const diff = Math.ceil((end - now) / (1000 * 60 * 60 * 24)); return diff > 0 ? diff : 0; }
+    // 获取分类名称
+    function getCategoryName(category) { const names = { ai: '人工智能', tech: '技术攻关', business: '商业创新', research: '科研难题' }; return names[category] || category; }
+    // 防XSS
+    function escapeHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    // 筛选项目
+    function filterProjects() {
+      let filtered = allProjects;
+      if (currentFilter !== 'all') filtered = filtered.filter(p => p.category === currentFilter);
+      if (searchKeyword) {
+        const keyword = searchKeyword.toLowerCase();
+        filtered = filtered.filter(p => p.title.toLowerCase().includes(keyword) || p.description.toLowerCase().includes(keyword) || p.tags.some(t => t.toLowerCase().includes(keyword)));
+      }
+      renderProjects(filtered);
+    }
+
+    // 跳转到详情页
+    function goToDetail(id) { showLoading(); setTimeout(() => { window.location.href = `challenge-detail.html?id=${id}`; }, 300); }
+    // 跳转到申报页
+    function goToApply(id) { showLoading(); setTimeout(() => { window.location.href = `challenge-apply.html?id=${id}`; }, 300); }
+    // 显示/隐藏加载动画
+    function showLoading() { if (loadingOverlay) loadingOverlay.classList.add('show'); }
+    function hideLoading() { if (loadingOverlay) loadingOverlay.classList.remove('show'); }
+
+    // 创建粒子背景
+    function createParticles() { const container = document.getElementById('particles'); if (!container) return; for (let i = 0; i < 30; i++) { const particle = document.createElement('div'); particle.className = 'particle'; particle.style.left = Math.random() * 100 + '%'; particle.style.animationDelay = Math.random() * 20 + 's'; particle.style.animationDuration = (15 + Math.random() * 10) + 's'; container.appendChild(particle); } }
+
+    // 数字递增动画
+    function animateNumbers() { document.querySelectorAll('.stat-card .number').forEach(el => { const target = parseInt(el.dataset.target) || 0; if (!target) return; const duration = 2000; const step = target / (duration / 16); let current = 0; const timer = setInterval(() => { current += step; if (current >= target) { el.textContent = formatNumber(target); clearInterval(timer); } else { el.textContent = formatNumber(Math.floor(current)); } }, 16); }); }
+
+    // 导航栏滚动效果
+    function handleNavScroll() { const nav = document.getElementById('nav'); if (!nav) return; if (window.scrollY > 50) nav.classList.add('on'); else nav.classList.remove('on'); }
+    // 滚动显示动画
+    function handleScrollAnimation() { document.querySelectorAll('.fade-in').forEach(el => { const rect = el.getBoundingClientRect(); if (rect.top < window.innerHeight - 100) el.classList.add('visible'); }); }
+
+    // 事件监听
+    filterTabs.forEach(tab => { tab.addEventListener('click', () => { filterTabs.forEach(t => t.classList.remove('active')); tab.classList.add('active'); currentFilter = tab.dataset.filter; filterProjects(); }); });
+    if (searchInput) searchInput.addEventListener('input', (e) => { searchKeyword = e.target.value; filterProjects(); });
+    window.addEventListener('scroll', () => { handleNavScroll(); handleScrollAnimation(); });
+
+    // 初始化 - 从后端加载数据
+    document.addEventListener('DOMContentLoaded', () => { createParticles(); loadProjects(); setTimeout(animateNumbers, 800); handleScrollAnimation(); });
+</script>
+<footer>
+    <div class="ft-i">
+      <div>
+        <div class="ft-brand"><span class="mk">◆</span> OPC Platform</div>
+        <p class="ft-desc">一站式OPC赋能平台，连接、展示、赋能全球独立创业者。一个人的公司，无限可能。</p>
+      </div>
+      <div class="ft-col">
+        <h4>平台</h4>
+        <a href="service.html">创业助手</a>
+        <a href="platform.html">全功能平台</a>
+        <a href="government.html">揭榜挂帅</a>
+        <a href="superagent.html">超级个体</a>
+      </div>
+      <div class="ft-col">
+        <h4>资源</h4>
+        <a href="legends.html">名人堂</a>
+        <a href="academy.html">学院</a>
+        <a href="policy.html">政策汇总</a>
+        <a href="community.html">社区</a>
+      </div>
+      <div class="ft-col">
+        <h4>支持</h4>
+        <a href="chat.html">实时聊天</a>
+        <a href="health.html">健康</a>
+        <a href="login.html">登录</a>
+        <a href="register.html">注册</a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 OPC Platform. All rights reserved.</span>
+      <div class="ft-social">
+        <a href="#">Twitter</a>
+        <a href="#">GitHub</a>
+        <a href="#">微信</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

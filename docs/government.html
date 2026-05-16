@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>政府揭榜 — OPC Marketplace</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://opcplatform.cn/government.html">
+    <meta property="og:title" content="政府揭榜 — OPC Marketplace">
+    <meta property="og:description" content="OPC政府揭榜挂帅平台，政企需求对接，独立创业者承接政府与企业创新挑战。">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="政府揭榜 — OPC Marketplace">
+    <meta name="twitter:description" content="OPC政府揭榜挂帅平台，政企需求对接，独立创业者承接政府与企业创新挑战。">
+    <link rel="canonical" href="https://opcplatform.cn/government.html">
+    <meta name="description" content="江苏省21家省属企业发布67个AI应用场景需求，面向全社会公开征集技术解决方案">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@400;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="kondratiev.css">
+    <style>
+        :root {
+    --bg: #09090b;
+    --bg2: #0f0f13;
+    --bg3: #18181b;
+    --card: #1c1c21;
+    --card2: #222228;
+    --card3: #2a2a32;
+    --border: #27272a;
+    --border2: #3f3f46;
+    --text: #fafafa;
+    --text2: #a1a1aa;
+    --text3: #71717a;
+    --gold: #e2b64f;
+    --gold2: #f5d98a;
+    --green: #22c55e;
+    --blue: var(--gold);
+    --purple: #a78bfa;
+    --orange: #f59e0b;
+    --red: #ef4444;
+    --serif: 'Noto Serif SC', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --radius-xs: 6px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== Noise Texture ===== */
+        body::before {
+            content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            background-repeat: repeat; opacity: 0.4;
+        }
+
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+
+        /* ===== Navigation ===== */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(6, 6, 10, 0.8); backdrop-filter: blur(24px) saturate(1.5);
+            border-bottom: 1px solid var(--border);
+            transition: background 0.3s;
+        }
+        .nav-inner {
+            max-width: 1280px; margin: 0 auto; padding: 0 32px;
+            height: 64px; display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+            display: flex; align-items: center; gap: 10px; text-decoration: none;
+            color: var(--text); font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
+            letter-spacing: -0.02em;
+        }
+        .nav-logo .dot { color: var(--gold); }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-link {
+            text-decoration: none; color: var(--text-muted); font-size: 0.875rem;
+            font-weight: 500; transition: color 0.2s; position: relative;
+        }
+        .nav-link:hover { color: var(--text); }
+        .nav-link.active { color: var(--text); }
+        .nav-link.active::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+            height: 2px; background: var(--gold); border-radius: 1px;
+        }
+        .lang-btn {
+            background: var(--bg-surface); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 6px 14px; border-radius: 8px;
+            font-size: 0.8rem; cursor: pointer; transition: all 0.2s;
+        }
+        .lang-btn:hover { border-color: var(--border-hover); color: var(--text); }
+
+        /* ===== Hero ===== */
+        .hero {
+            min-height: 70vh; display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden; padding: 140px 24px 80px;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(231,76,60,0.08), transparent 70%),
+                        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(255,138,80,0.04), transparent 60%);
+        }
+        .hero-content { text-align: center; max-width: 860px; position: relative; z-index: 1; }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;
+            color: var(--gold); background: rgba(226,182,79,0.08);
+            border: 1px solid rgba(226,182,79,0.15); padding: 8px 20px;
+            border-radius: 100px; margin-bottom: 28px;
+            animation: fadeUp 0.8s var(--ease) both;
+        }
+        .hero-badge .pulse {
+            width: 6px; height: 6px; border-radius: 50%; background: var(--gold);
+            animation: pulse 2s infinite;
+        }
+
+        .hero-title {
+            font-family: var(--serif); font-size: clamp(2.5rem, 5.5vw, 4rem);
+            font-weight: 700; line-height: 1.08; margin-bottom: 24px;
+            letter-spacing: -0.03em;
+            animation: fadeUp 0.8s var(--ease) 0.1s both;
+        }
+        .hero-title .gradient {
+            background: linear-gradient(135deg, var(--accent-light), var(--accent-warm));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem; color: var(--text-secondary); max-width: 640px;
+            margin: 0 auto 48px; line-height: 1.7;
+            animation: fadeUp 0.8s var(--ease) 0.2s both;
+        }
+
+        /* ===== Stats Row ===== */
+        .stats-row {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+            background: var(--border); border-radius: var(--radius); overflow: hidden;
+            max-width: 720px; margin: 0 auto 48px;
+            animation: fadeUp 0.8s var(--ease) 0.3s both;
+        }
+        .stat-cell {
+            background: var(--bg-elevated); padding: 28px 20px; text-align: center;
+            transition: background 0.3s;
+        }
+        .stat-cell:hover { background: var(--bg-card-hover); }
+        .stat-number {
+            font-family: var(--font-display); font-size: 2.2rem; font-weight: 700;
+            letter-spacing: -0.03em; margin-bottom: 4px;
+        }
+        .stat-number.red { color: var(--accent-light); }
+        .stat-number.gold { color: var(--gold); }
+        .stat-number.blue { color: var(--blue); }
+        .stat-number.green { color: var(--green); }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+
+        .hero-cta {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--gold); color:var(--text); text-decoration: none;
+            padding: 14px 32px; border-radius: 12px; font-weight: 600; font-size: 0.95rem;
+            transition: all 0.3s var(--ease); border: none; cursor: pointer;
+            animation: fadeUp 0.8s var(--ease) 0.4s both;
+        }
+        .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(226,182,79,0.3); background: var(--gold2); }
+
+        /* ===== Filter Section ===== */
+        .filter-section {
+            padding: 0 0 48px; position: relative; z-index: 10;
+        }
+        .filter-bar {
+            display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+            justify-content: center; margin-bottom: 20px;
+        }
+        .filter-btn {
+            background: var(--bg-surface); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 18px; border-radius: 100px;
+            font-size: 0.82rem; font-weight: 500; cursor: pointer;
+            transition: all 0.25s var(--ease); font-family: var(--font-body);
+        }
+        .filter-btn:hover { border-color: var(--border-hover); color: var(--text); background: var(--bg-card); }
+        .filter-btn.active {
+            background: var(--gold); border-color: var(--gold); color:var(--text);
+            box-shadow: 0 4px 16px rgba(226,182,79,0.25);
+        }
+
+        .search-bar {
+            max-width: 520px; margin: 0 auto; position: relative;
+        }
+        .search-bar input {
+            width: 100%; background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text); padding: 14px 20px 14px 48px; border-radius: 14px;
+            font-size: 0.95rem; font-family: var(--font-body); outline: none;
+            transition: all 0.3s;
+        }
+        .search-bar input::placeholder { color: var(--text-muted); }
+        .search-bar input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(231,76,60,0.1); }
+        .search-bar .icon {
+            position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+            color: var(--text-muted); font-size: 1.1rem;
+        }
+        .search-bar .count {
+            position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+            color: var(--text-muted); font-size: 0.8rem; font-weight: 500;
+        }
+
+        /* ===== Project Grid ===== */
+        .projects-section { padding: 0 0 80px; }
+        .section-header {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 32px;
+        }
+        .section-title {
+            font-family: var(--serif); font-size: 1.6rem; font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .section-count {
+            font-size: 0.85rem; color: var(--text-muted);
+            background: var(--bg-surface); padding: 6px 14px; border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .projects-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 20px;
+        }
+
+        /* ===== Project Card ===== */
+        .project-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px; position: relative;
+            transition: all 0.4s var(--ease); overflow: hidden;
+        }
+        .project-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--accent-warm));
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .project-card:hover {
+            border-color: var(--border-hover); transform: translateY(-4px);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.3);
+        }
+        .project-card:hover::before { opacity: 1; }
+
+        .card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; }
+        .card-company {
+            font-size: 0.78rem; color: var(--text-muted); font-weight: 500;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .card-badge {
+            font-size: 0.68rem; padding: 3px 10px; border-radius: 6px;
+            font-weight: 600; letter-spacing: 0.5px;
+        }
+        .badge-featured {
+            background: rgba(231,76,60,0.12); color: var(--accent-light); border: 1px solid rgba(231,76,60,0.2);
+        }
+        .badge-hot {
+            background: rgba(240,192,64,0.12); color: var(--gold); border: 1px solid rgba(240,192,64,0.2);
+        }
+
+        .card-title {
+            font-family: var(--font-display); font-size: 1.1rem; font-weight: 600;
+            line-height: 1.4; margin-bottom: 12px; letter-spacing: -0.01em;
+            color: var(--text);
+        }
+        .card-desc {
+            font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65;
+            margin-bottom: 20px;
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+        }
+
+        .card-meta {
+            display: flex; align-items: center; gap: 16px; margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .meta-item {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 0.8rem; color: var(--text-muted);
+        }
+        .meta-item .label { color: var(--text-muted); }
+        .meta-item .value { color: var(--text-secondary); font-weight: 500; }
+        .meta-item .value.budget { color: var(--gold); font-weight: 600; }
+        .meta-item .value.deadline { color: var(--accent-light); }
+
+        .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+        .tag {
+            font-size: 0.72rem; padding: 4px 10px; border-radius: 6px;
+            background: rgba(255,255,255,0.04); color: var(--text-muted);
+            border: 1px solid var(--border); font-weight: 500;
+        }
+
+        .card-actions { display: flex; gap: 10px; }
+        .btn-detail {
+            flex: 1; background: var(--bg-surface); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 10px 16px; border-radius: 10px;
+            font-size: 0.82rem; font-weight: 500; cursor: pointer;
+            transition: all 0.2s; text-align: center; text-decoration: none;
+            font-family: var(--font-body);
+        }
+        .btn-detail:hover { border-color: var(--border-hover); color: var(--text); }
+        .btn-apply {
+            flex: 1; background: var(--gold); border: none;
+            color:var(--text); padding: 10px 16px; border-radius: 10px;
+            font-size: 0.82rem; font-weight: 600; cursor: pointer;
+            transition: all 0.25s var(--ease); text-align: center; text-decoration: none;
+            font-family: var(--font-body);
+        }
+        .btn-apply:hover { box-shadow: 0 4px 16px rgba(226,182,79,0.3); transform: translateY(-1px); background: var(--gold2); }
+
+        /* ===== Empty State ===== */
+        .empty-state {
+            text-align: center; padding: 80px 20px;
+            color: var(--text-muted); font-size: 1rem;
+        }
+        .empty-state .icon { font-size: 3rem; margin-bottom: 16px; opacity: 0.5; }
+
+        /* ===== Footer ===== */
+        .footer {
+            border-top: 1px solid var(--border); padding: 48px 0;
+            position: relative; z-index: 1;
+        }
+        .footer-inner {
+            max-width: 1280px; margin: 0 auto; padding: 0 32px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .footer-text { color: var(--text-muted); font-size: 0.82rem; }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a {
+            color: var(--text-muted); text-decoration: none; font-size: 0.82rem;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--text); }
+
+        /* ===== Animations ===== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+        @keyframes cardIn {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-in { animation: cardIn 0.6s var(--ease) both; }
+
+        /* ===== Scrollbar ===== */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .projects-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 16px; }
+            .nav-link { font-size: 0.8rem; }
+            .hero-title { font-size: 2rem; }
+            .filter-bar { gap: 8px; }
+            .filter-btn { padding: 6px 14px; font-size: 0.78rem; }
+            .container { padding: 0 16px; }
+        }
+
+        /* Mobile nav */
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--text); font-size: 1.4rem; cursor: pointer; }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: rgba(6,6,10,0.98); padding: 20px 32px; gap: 16px; border-bottom: 1px solid var(--border); }
+        }
+    </style>
+
+<meta property="og:title" content="OPC 揭榜挂帅 — 政府科技项目对接平台">
+<meta property="og:description" content="精准匹配政府科技需求与创业者能力，揭榜挂帅模式让技术人才直接对接项目机会，实现快速变现。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mokangmedical.github.io/opc-platform/government.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mokangmedical.github.io/opc-platform/government.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+</head>
+<body>
+<!-- NAV -->
+<nav class="nav" id="nav">
+<div class="nav-i">
+<a href="index.html" class="nav-logo"><span class="mk">◆</span> OPC Platform</a>
+<div class="nav-links">
+<a href="service.html" class="nl">创业助手</a>
+<a href="platform.html" class="nl">平台</a>
+<a href="government.html" class="nl">揭榜挂帅</a>
+<a href="challenge.html" class="nl"><span class="zh">揭榜</span><span class="en" style="display:none">Challenge</span></a>
+<a href="superagent.html" class="nl">超级个体</a>
+<a href="legends.html" class="nl">名人堂</a>
+<a href="academy.html" class="nl">学院</a>
+<a href="policy.html" class="nl">政策</a>
+<a href="community.html" class="nl">社区</a>
+<button class="lg" onclick="togLang()">🌐 EN/中</button>
+</div>
+<button class="mob" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">☰</button>
+</div>
+</nav>
+
+    <!-- Navigation -->
+    
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse"></span>
+                <span data-en="AI+ ACTION · STATE-OWNED ENTERPRISES">AI+行动 · 省属企业 · 揭榜挂帅</span>
+            </div>
+            <h1 class="hero-title">
+                <span data-en="Government Tech Innovation">政府科技创新项目</span><br>
+                <span class="gradient" data-en="Challenge Marketplace">揭榜挂帅对接平台</span>
+            </h1>
+            <p class="hero-desc" data-en="21 state-owned enterprises in Jiangsu Province published 67 AI application scenarios, with a total investment of 350 million yuan, openly seeking technical solutions from the public.">
+                江苏省21家省属企业发布67个AI应用场景需求，涉及建设投资3.5亿元，面向全社会公开征集技术解决方案。
+            </p>
+            <div class="stats-row">
+                <div class="stat-cell">
+                    <div class="stat-number red" data-count="67">67</div>
+                    <div class="stat-label" data-en="Total Projects">项目总数</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="stat-number gold">3.5亿</div>
+                    <div class="stat-label" data-en="Total Budget">总预算</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="stat-number blue" data-count="26">26</div>
+                    <div class="stat-label" data-en="Industries">行业覆盖</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="stat-number green" data-count="21">21</div>
+                    <div class="stat-label" data-en="Publishers">发布方</div>
+                </div>
+            </div>
+            <a href="#projects" class="hero-cta">
+                <span data-en="Browse Projects">浏览项目</span>
+                <span>↓</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Filter -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-bar" id="filterBar">
+                <!-- Generated by JS -->
+            </div>
+            <div class="search-bar">
+                <span class="icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="搜索项目名称、企业、技术关键词..." data-en-placeholder="Search projects, companies, technologies...">
+                <span class="count" id="searchCount"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="All Projects">全部项目</h2>
+                <span class="section-count" id="projectCount"></span>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Generated by JS -->
+            </div>
+            <div class="empty-state" id="emptyState" style="display:none;">
+                <div class="icon">🔍</div>
+                <p data-en="No projects found. Try adjusting your filters.">没有找到匹配的项目，请调整筛选条件。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+    <div class="ft-i">
+      <div>
+        <div class="ft-brand"><span class="mk">◆</span> OPC Platform</div>
+        <p class="ft-desc">一站式OPC赋能平台，连接、展示、赋能全球独立创业者。一个人的公司，无限可能。</p>
+      </div>
+      <div class="ft-col">
+        <h4>平台</h4>
+        <a href="service.html">创业助手</a>
+        <a href="platform.html">全功能平台</a>
+        <a href="government.html">揭榜挂帅</a>
+        <a href="superagent.html">超级个体</a>
+      </div>
+      <div class="ft-col">
+        <h4>资源</h4>
+        <a href="legends.html">名人堂</a>
+        <a href="academy.html">学院</a>
+        <a href="policy.html">政策汇总</a>
+        <a href="community.html">社区</a>
+      </div>
+      <div class="ft-col">
+        <h4>支持</h4>
+        <a href="chat.html">实时聊天</a>
+        <a href="health.html">健康</a>
+        <a href="login.html">登录</a>
+        <a href="register.html">注册</a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 OPC Platform. All rights reserved.</span>
+      <div class="ft-social">
+        <a href="#">Twitter</a>
+        <a href="#">GitHub</a>
+        <a href="#">微信</a>
+      </div>
+    </div>
+  </footer>
+
+    <script>
+    // ===== Project Data (embedded from jiangsu_ai_scenarios.json) =====
+    const PROJECTS = [
+        {id:1,title:"海上风电场智能运维场景",company:"江苏省国信集团有限公司",category:"新能源",desc:"融合人工智能技术，在海上风电项目建设智能运维系统中对风机状态进行实时评估和远程运维，实现海上风电机组无人巡检、故障预测维护，提升运维效率和安全性。",budget:"¥200万-300万",budgetMin:200,deadline:"2026-06-13",tags:["人工智能","物联网","大数据"],contact:"叶兴沛",featured:true},
+        {id:2,title:"智慧电厂全景感知与自主优化场景",company:"江苏省国信集团有限公司",category:"能源",desc:"部署智能传感、工业互联网平台和自主控制系统，构建AI+数字孪生电厂，涵盖燃料输送智能调度、机组参数实时监控、无人巡检及智能决策优化。",budget:"¥200万-300万",budgetMin:200,deadline:"2026-05-11",tags:["人工智能","数字孪生","物联网"],contact:"王强",featured:true},
+        {id:3,title:"300MW级高温绝热压缩空气储能系统全过程智能运行场景",company:"江苏省国信集团有限公司",category:"储能",desc:"建设智能灵活调控+实时滚动优化+高精度故障诊断三位一体的全过程智能运行体系，提升安全性、经济性与调峰支撑能力。",budget:"¥800万",budgetMin:800,deadline:"2026-05-05",tags:["人工智能","故障诊断"],contact:"杨正",featured:true},
+        {id:4,title:"基于火焰视觉感知与高温气象场测量的锅炉燃烧智能管控场景",company:"江苏省国信集团有限公司",category:"能源",desc:"利用AI视觉感知和高温气象场测量技术，对锅炉燃烧过程进行智能管控和优化。",budget:"¥200万-500万",budgetMin:200,deadline:"2026-05-21",tags:["人工智能","计算机视觉"],contact:"叶兴沛"},
+        {id:5,title:"施工安全智能监测场景",company:"江苏省国信集团有限公司",category:"安全监测",desc:"利用无人机、机器狗、安全传感器等，在电厂基建工地和重大施工项目应用智慧工地解决方案，实现高危作业智能监测预警、施工现场数字孪生可视化和违规行为自动抓拍。",budget:"¥200万-300万",budgetMin:200,deadline:"2026-05-19",tags:["人工智能","无人机","数字孪生"],contact:"王毅"},
+        {id:6,title:"煤炭码头船舶安全靠泊引导场景",company:"江苏省国信集团有限公司",category:"物流仓储",desc:"构建多源感知+AI融合决策的智能靠泊引导体系，通过激光雷达、无人机等硬件，实时采集船舶动态与水文气象数据，实现智能分析及风险预警。",budget:"¥180万",budgetMin:180,deadline:"2026-05-18",tags:["人工智能","SLAM算法","深度学习"],contact:"胡高斌"},
+        {id:7,title:"一站式智能保险规划场景",company:"江苏省国信集团有限公司",category:"保险",desc:"嵌入客户需求分析与产品知识库，实现保障缺口量化、智能产品匹配与标准化建议书一键生成，为代理人提供实时专业支持。",budget:"¥150万",budgetMin:150,deadline:"2026-05-12",tags:["人工智能","知识库"],contact:"兰峰"},
+        {id:8,title:"主动集体健康管理场景",company:"江苏省国信集团有限公司",category:"医疗健康",desc:"通过定制智能穿戴设备持续采集患者生命体征数据，结合AI算法分析预警，推动病区护理数字化升级，助力老年心血管疾病管理从被动救治转主动预防。",budget:"¥100万",budgetMin:100,deadline:"2026-05-10",tags:["人工智能","可穿戴设备"],contact:"顾博森"},
+        {id:9,title:"路网营运知识工程及高质量数据集建设场景",company:"江苏交通控股有限公司",category:"交通",desc:"围绕路网运行复杂高频业务场景，聚焦多模态数据集规范建设、知识库语义对齐、跨系统数据动态调用等关键难题，开展江苏高速EI路网智能体知识工程建设技术与应用模式研究。",budget:"¥200万",budgetMin:200,deadline:"2026-06-16",tags:["人工智能","知识图谱","大数据"],contact:"王浩淼"},
+        {id:10,title:"路网智慧管控场景",company:"江苏交通控股有限公司",category:"交通",desc:"基于AI视频分析与交通流预测技术，实现路网事件自动检测、拥堵预警、应急资源智能调度，提升高速公路运营管控效率与安全水平。",budget:"¥200万-500万",budgetMin:200,deadline:"2026-06-07",tags:["人工智能","计算机视觉"],contact:"王浩淼"},
+        {id:11,title:"定制化出行服务场景",company:"江苏交通控股有限公司",category:"交通",desc:"运用AI分析用户出行习惯和实时路况，提供个性化路线规划、一站式出行服务、伴随式信息服务，提升出行体验。",budget:"¥200万-500万",budgetMin:200,deadline:"2026-05-09",tags:["人工智能"],contact:"王浩淼"},
+        {id:12,title:"智能客服场景",company:"江苏交通控股有限公司",category:"交通",desc:"基于交通行业大模型优化意图识别与语义理解，结合出行者路线咨询、收费标准解读、路况查询等需求，构建智慧客服智能体系统，提升常见出行问题应答准确率。",budget:"¥700万",budgetMin:700,deadline:"2026-06-10",tags:["人工智能","大模型","NLP"],contact:"钱旻"},
+        {id:13,title:"智慧收费清分与结算场景",company:"江苏交通控股有限公司",category:"交通",desc:"基于智能数据分析技术以及模型算法，构建结算对账优化系统，实现结算对账体系优化，有效减少对账差错、提升工作效率。",budget:"¥2400万",budgetMin:2400,deadline:"2026-05-31",tags:["人工智能","数据分析"],contact:"奚韩",hot:true},
+        {id:14,title:"桥梁经常检查场景",company:"江苏交通控股有限公司",category:"交通",desc:"研发GNSS-激光雷达SLAM导航定位协调技术、智能视觉病害识别算法、厘米级病害定位等关键技术，构建智能化桥梁巡检体系。",budget:"¥150万",budgetMin:150,deadline:"2026-05-06",tags:["人工智能","无人机","SLAM"],contact:"郑俊秋"},
+        {id:15,title:"桥梁智慧化运维场景",company:"江苏交通控股有限公司",category:"交通",desc:"探索基于监测视频开展桥梁坍塌、桥面大变形等重大风险自动识别算法研究，融合结构健康监测数据与AI图形识别能力提升桥梁风险预警能力。",budget:"¥220万",budgetMin:220,deadline:"2026-05-05",tags:["人工智能","计算机视觉"],contact:"郑俊秋"},
+        {id:16,title:"无人机融合应用场景",company:"江苏交通控股有限公司",category:"交通",desc:"打通无人机与现有高速公路作业系统和数据中台融合，持续提升算法识别的准确性场景丰富性。",budget:"¥1000万",budgetMin:1000,deadline:"2026-05-09",tags:["人工智能","无人机"],contact:"田鹏",hot:true},
+        {id:17,title:"媒体生产全链路智能协同与任务调度系统",company:"江苏省广播电视集团有限公司",category:"传媒",desc:"构建媒体内容生产全链路AI协同平台，实现选题策划、素材采集、内容编辑、审核发布、效果分析的智能化调度与任务分配。",budget:"¥100万-300万",budgetMin:100,deadline:"2026-05-17",tags:["人工智能"],contact:"席鲁江"},
+        {id:18,title:"江苏省城市足球联赛智慧赛事分析及产业化应用场景",company:"江苏省广播电视集团有限公司",category:"传媒",desc:"利用AI技术对足球联赛进行智慧赛事分析，涵盖球员表现评估、战术分析、观众行为洞察，推动赛事产业化发展。",budget:"¥100万-300万",budgetMin:100,deadline:"2026-05-18",tags:["人工智能"],contact:"席鲁江"},
+        {id:19,title:"面向演唱会及大型演艺的AI智能化舞台全流程模拟与合成平台",company:"江苏省广播电视集团有限公司",category:"传媒",desc:"构建以AI为核心的全链路虚拟制作平台，实现舞台视觉、灯光、镜头等全要素智能化生成控制，突破实时渲染与协同调度技术。",budget:"¥100万",budgetMin:100,deadline:"2026-06-05",tags:["人工智能","虚拟制作","实时渲染"],contact:"席鲁江"},
+        {id:20,title:"机场飞行区安全风险智能监测与预警场景",company:"东部机场集团有限公司",category:"航空安全",desc:"结合监控、雷达数据，运用多源传感融合和AI计算机视觉技术，实现跑道非法入侵、鸟击、外来物损伤、无人机干扰等核心风险智能识别、实时预警与协同处置。",budget:"¥600万",budgetMin:600,deadline:"2026-06-11",tags:["人工智能","计算机视觉","传感器融合"],contact:"王苗苗"},
+        {id:21,title:"AI技术赋能3D服装设计应用场景",company:"江苏省苏豪控股集团有限公司",category:"纺织服装",desc:"聚焦服装研发需求，智能分析市场趋势与客户画像，3D虚拟打样减少浪费，解决研发周期长、成本高、适配差痛点。",budget:"¥150万",budgetMin:150,deadline:"2026-05-05",tags:["人工智能","3D虚拟打样"],contact:"邢梦婷"},
+        {id:22,title:"跨境电商选品从经验驱动转为数据驱动场景",company:"江苏省苏豪控股集团有限公司",category:"跨境电商",desc:"以AI赋能B2B贸易为核心，构建覆盖建站获客-内容生成-智能营销-一键通关全流程的一站式数字外贸服务平台。",budget:"¥360万",budgetMin:360,deadline:"2026-05-15",tags:["人工智能","大数据"],contact:"邢梦婷"},
+        {id:23,title:"苏豪云大模型驱动跨境电商全链路数字营销与合规服务场景",company:"江苏省苏豪控股集团有限公司",category:"跨境电商",desc:"依托自主微调的苏豪云电商垂直大模型，构建智能化内容生成与合规引擎，融合AI自然语言处理技术与跨境电商业务规则。",budget:"¥500万",budgetMin:500,deadline:"2026-06-01",tags:["人工智能","大模型","NLP"],contact:"邢梦婷"},
+        {id:24,title:"轮胎智能制造AI应用场景",company:"江苏省苏豪控股集团有限公司",category:"先进制造",desc:"将AI技术应用于轮胎智能制造全流程，包括工艺参数优化、质量在线检测、设备预测性维护，提升生产效率和产品质量。",budget:"¥100万-300万",budgetMin:100,deadline:"2026-05-20",tags:["人工智能"],contact:"邢梦婷"},
+        {id:25,title:"轮胎产品研发与材料创新AI场景",company:"江苏省苏豪控股集团有限公司",category:"先进制造",desc:"利用AI加速轮胎产品研发，包括新材料配方优化、产品性能仿真预测、研发周期缩短，推动材料创新与产品升级。",budget:"¥100万-300万",budgetMin:100,deadline:"2026-05-25",tags:["人工智能"],contact:"邢梦婷"},
+        {id:26,title:"智慧供应链与绿色制造场景",company:"江苏省苏豪控股集团有限公司",category:"供应链",desc:"构建AI驱动的智慧供应链管理平台，实现采购、生产、物流全链路智能化协同，结合绿色制造理念降低碳排放。",budget:"¥200万-500万",budgetMin:200,deadline:"2026-05-30",tags:["人工智能"],contact:"邢梦婷"},
+        {id:27,title:"安全生产智能预警与管控场景",company:"江苏省苏豪控股集团有限公司",category:"安全监测",desc:"融合AI视觉与物联网技术构建立体化安全防控体系，实现风险感知、研判、处置闭环，变被动为主动预防。",budget:"¥500万",budgetMin:500,deadline:"2026-06-01",tags:["人工智能","物联网","计算机视觉"],contact:"邢梦婷"},
+        {id:28,title:"安全生产便携式智能预警与管控场景",company:"江苏省苏豪控股集团有限公司",category:"安全监测",desc:"融合安全法律法规、深度算法管理，实现拍照识别后自动比对显示隐患内容，达成安全隐患排查自动化、智能化。",budget:"¥70万",budgetMin:70,deadline:"2026-05-10",tags:["人工智能","图像识别"],contact:"邢梦婷"},
+        {id:29,title:"化工安全与经营智能决策应用场景",company:"江苏省苏豪控股集团有限公司",category:"化工",desc:"融合AI算力、大模型、智能感知等技术，围绕安全可控、提质增效、数智赋能目标，落地多场景智能化应用。",budget:"¥47万",budgetMin:47,deadline:"2026-05-15",tags:["人工智能","大模型","智能感知"],contact:"邢梦婷"},
+        {id:30,title:"基于数据中台的AI+智能风险管控平台",company:"江苏省苏豪控股集团有限公司",category:"综合管理",desc:"融合数据中台、AI视觉模型及知识图谱技术，构建数据资产体系、打造AI服务，推进主数据标准化与稽核智能协同。",budget:"¥350万",budgetMin:350,deadline:"2026-05-25",tags:["人工智能","数据中台","知识图谱"],contact:"邢梦婷"}
+    ];
+
+    // ===== API Configuration =====
+    const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:8000/api' : '/api';
+    let allProjects = [];
+
+    // Categories
+    const CATEGORIES = ['全部',...new Set(PROJECTS.map(p=>p.category))];
+    const CAT_ICONS = {'全部':'📋','新能源':'⚡','能源':'🔥','储能':'🔋','交通':'🚄','安全监测':'🛡️','传媒':'📺','航空安全':'✈️','纺织服装':'👗','跨境电商':'🌐','先进制造':'🏭','供应链':'📦','化工':'🧪','综合管理':'📊','保险':'🛡️','医疗健康':'🏥','物流仓储':'📦'};
+
+    let currentFilter = '全部';
+    let searchTerm = '';
+
+    // ===== Render Filter Bar =====
+    function renderFilters() {
+        const bar = document.getElementById('filterBar');
+        bar.innerHTML = CATEGORIES.map(cat => {
+            const count = cat === '全部' ? allProjects.length : allProjects.filter(p => p.category === cat).length;
+            const icon = CAT_ICONS[cat] || '📌';
+            return `<button class="filter-btn ${cat === currentFilter ? 'active' : ''}" onclick="filterBy('${cat}')">${icon} ${cat} (${count})</button>`;
+        }).join('');
+    }
+
+    // ===== Render Projects =====
+    function renderProjects() {
+        const grid = document.getElementById('projectsGrid');
+        const empty = document.getElementById('emptyState');
+        const countEl = document.getElementById('projectCount');
+        const searchCountEl = document.getElementById('searchCount');
+
+        let filtered = allProjects;
+        if (currentFilter !== '全部') filtered = filtered.filter(p => p.category === currentFilter);
+        if (searchTerm) {
+            const s = searchTerm.toLowerCase();
+            filtered = filtered.filter(p =>
+                p.title.toLowerCase().includes(s) ||
+                p.company.toLowerCase().includes(s) ||
+                p.tags.some(t => t.toLowerCase().includes(s)) ||
+                p.category.toLowerCase().includes(s)
+            );
+        }
+
+        countEl.textContent = `${filtered.length} 个项目`;
+        searchCountEl.textContent = searchTerm ? `${filtered.length} 匹配` : '';
+
+        if (filtered.length === 0) {
+            grid.innerHTML = '';
+            empty.style.display = 'block';
+            return;
+        }
+        empty.style.display = 'none';
+
+        grid.innerHTML = filtered.map((p, i) => {
+            const deadlineDate = new Date(p.deadline);
+            const now = new Date();
+            const daysLeft = Math.ceil((deadlineDate - now) / (1000 * 60 * 60 * 24));
+            const deadlineText = daysLeft > 0 ? `还剩${daysLeft}天` : '已截止';
+            const deadlineColor = daysLeft <= 10 ? 'color: #ff6b6b;' : daysLeft <= 30 ? 'color: #f0c040;' : '';
+
+            return `
+            <div class="project-card animate-in" style="animation-delay: ${i * 0.05}s">
+                <div class="card-header">
+                    <span class="card-company">🏢 ${p.company.replace(/(有限公司|集团)/g,'')}</span>
+                    ${p.featured ? '<span class="card-badge badge-featured">精选</span>' : ''}
+                    ${p.hot ? '<span class="card-badge badge-hot">🔥 热门</span>' : ''}
+                </div>
+                <h3 class="card-title">${p.title}</h3>
+                <p class="card-desc">${p.desc}</p>
+                <div class="card-meta">
+                    <div class="meta-item"><span class="label">💰</span> <span class="value budget">${p.budget}</span></div>
+                    <div class="meta-item"><span class="label">📅</span> <span class="value deadline" style="${deadlineColor}">${daysLeft > 0 ? deadlineText : '已截止'}</span></div>
+                    <div class="meta-item"><span class="label">👤</span> <span class="value">${p.contact}</span></div>
+                </div>
+                <div class="card-tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+                <div class="card-actions">
+                    <button class="btn-detail" onclick="showDetail(${p.id})">查看详情</button>
+                    <button class="btn-apply">立即申报 →</button>
+                </div>
+            </div>`;
+        }).join('');
+    }
+
+    function filterBy(cat) {
+        currentFilter = cat;
+        renderFilters();
+        renderProjects();
+    }
+
+    function showDetail(id) {
+        const p = allProjects.find(x => x.id === id);
+        if (!p) return;
+        alert(`📋 ${p.title}\n\n🏢 ${p.company}\n💰 预算: ${p.budget}\n📅 截止: ${p.deadline}\n👤 联系人: ${p.contact}\n🔧 技术: ${p.tags.join(', ')}\n\n${p.desc}`);
+    }
+
+    // ===== Search =====
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+        searchTerm = e.target.value;
+        renderProjects();
+    });
+
+    // ===== i18n =====
+    let lang = localStorage.getItem('opc-lang') || 'zh';
+    function toggleLang() {
+        lang = lang === 'zh' ? 'en' : 'zh';
+        localStorage.setItem('opc-lang', lang);
+        applyLang();
+    }
+    function applyLang() {
+        document.querySelectorAll('[data-en]').forEach(el => {
+            el.textContent = lang === 'en' ? el.dataset.en : el.getAttribute('data-zh') || el.textContent;
+        });
+        // Save original zh text
+        document.querySelectorAll('[data-en]').forEach(el => {
+            if (!el.dataset.zh) el.dataset.zh = el.textContent;
+        });
+        // Swap
+        document.querySelectorAll('[data-en]').forEach(el => {
+            const orig = el.dataset.zh;
+            const en = el.dataset.en;
+            el.textContent = lang === 'en' ? en : orig;
+        });
+    }
+
+    // ===== Load Projects =====
+    async function loadProjects() {
+        const grid = document.getElementById('projectsGrid');
+        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--text-muted, #5a5a72);font-size:1rem">⏳ 加载中...</div>';
+        try {
+            const resp = await fetch(`${API_BASE}/government/`);
+            const data = await resp.json();
+            allProjects = data.projects || data || [];
+            document.getElementById('projectCount').textContent = `${allProjects.length} 个项目`;
+        } catch(e) {
+            console.log('API unavailable, using fallback data');
+            allProjects = PROJECTS;
+            document.getElementById('projectCount').textContent = `${allProjects.length} 个项目`;
+        }
+        renderFilters();
+        renderProjects();
+    }
+
+    // ===== Init =====
+    loadProjects();
+    
+// ===== OPC Platform 增强功能 =====
+function showNotification(msg,type='success'){
+const n=document.createElement('div');
+n.style.cssText='position:fixed;top:80px;right:20px;z-index:9999;background:'+(type==='success'?'#00d68f':type==='error'?'#ff6b6b':'var(--gold)')+';color:#fff;padding:12px 20px;border-radius:10px;font-size:14px;box-shadow:0 4px 20px rgba(0,0,0,.3);animation:fadeIn .3s';
+n.textContent=msg;document.body.appendChild(n);setTimeout(()=>n.remove(),3000);
+}
+function toggleFavorite(id,type){
+const k='opc-fav-'+type;let f=JSON.parse(localStorage.getItem(k)||'[]');
+const i=f.indexOf(id);if(i>-1){f.splice(i,1);showNotification('已取消收藏');}else{f.push(id);showNotification('已添加收藏');}
+localStorage.setItem(k,JSON.stringify(f));
+}
+function shareContent(title,url){
+if(navigator.share){navigator.share({title,url});}else{navigator.clipboard.writeText(url);showNotification('链接已复制');}
+}
+function showModal(c){
+const m=document.createElement('div');m.style.cssText='position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.8);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:20px';
+m.innerHTML='<div style="background:#111119;border-radius:16px;padding:32px;max-width:600px;width:100%;max-height:80vh;overflow-y:auto"><div style="display:flex;justify-content:flex-end;margin-bottom:16px"><button onclick="this.closest(\'[style*=fixed]\').remove()" style="background:none;border:none;color:var(--text3);font-size:24px;cursor:pointer">×</button></div>'+c+'</div>';
+document.body.appendChild(m);
+}
+function saveUserData(k,d){localStorage.setItem('opc-'+k,JSON.stringify(d));}
+function getUserData(k){return JSON.parse(localStorage.getItem('opc-'+k)||'null');}
+function validateForm(fid){const f=document.getElementById(fid);if(!f)return false;let v=true;f.querySelectorAll('[required]').forEach(e=>{if(!e.value.trim()){e.style.borderColor='#ff6b6b';v=false;}else{e.style.borderColor='';}});return v;}
+
+</script>
+</body>
+</html>

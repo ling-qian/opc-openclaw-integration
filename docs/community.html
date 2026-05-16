@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+    <meta name="description" content="OPC创业者社区，连接全球独立创业者，分享经验、资源互助、共同成长。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="kondratiev.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPC 社区 — 独立创业者交流平台</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://opcplatform.cn/community.html">
+    <meta property="og:title" content="OPC 社区 — 独立创业者交流平台">
+    <meta property="og:description" content="OPC创业者社区，连接全球独立创业者，分享经验、资源互助、共同成长。">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OPC 社区 — 独立创业者交流平台">
+    <meta name="twitter:description" content="OPC创业者社区，连接全球独立创业者，分享经验、资源互助、共同成长。">
+    <link rel="canonical" href="https://opcplatform.cn/community.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg: #09090b;
+    --bg2: #0f0f13;
+    --bg3: #18181b;
+    --card: #1c1c21;
+    --card2: #222228;
+    --card3: #2a2a32;
+    --border: #27272a;
+    --border2: #3f3f46;
+    --text: #fafafa;
+    --text2: #a1a1aa;
+    --text3: #71717a;
+    --gold: #e2b64f;
+    --gold2: #f5d98a;
+    --green: #22c55e;
+    --blue: var(--gold);
+    --purple: #a78bfa;
+    --orange: #f59e0b;
+    --red: #ef4444;
+    --serif: 'Noto Serif SC', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --radius-xs: 6px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--fb);background:var(--bg);color:var(--t1);line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");background-repeat:repeat;opacity:.4}
+.c{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(6,6,10,.8);backdrop-filter:blur(24px) saturate(1.5);border-bottom:1px solid var(--border)}
+.nav-i{max-width:1280px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-l{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--t1);font-family:var(--fd);font-weight:700;font-size:1.1rem;letter-spacing:-.02em}
+.nav-l .d{color:var(--green)}
+.nav-lks{display:flex;align-items:center;gap:32px}
+.nav-lk{text-decoration:none;color:var(--t3);font-size:.875rem;font-weight:500;transition:color .2s;position:relative}
+.nav-lk:hover{color:var(--t1)}.nav-lk.a{color:var(--t1)}.nav-lk.a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--green);border-radius:1px}
+.lbtn{background:rgba(255,255,255,.02);border:1px solid var(--border);color:var(--t2);padding:6px 14px;border-radius:8px;font-size:.8rem;cursor:pointer;transition:all .2s}
+.hero{min-height:50vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:140px 24px 60px}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 20%,rgba(0,214,143,.06),transparent 70%),radial-gradient(ellipse 60% 50% at 80% 80%,rgba(78,168,222,.03),transparent 60%)}
+.hero-c{text-align:center;max-width:860px;position:relative;z-index:1}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--green);background:rgba(0,214,143,.08);border:1px solid rgba(0,214,143,.15);padding:8px 20px;border-radius:100px;margin-bottom:28px;animation:fu .8s var(--e) both}
+.ht{font-family:var(--fd);font-size:clamp(2.5rem,5.5vw,4rem);font-weight:700;line-height:1.08;margin-bottom:24px;letter-spacing:-.03em;animation:fu .8s var(--e) .1s both}
+.ht .g{background:linear-gradient(135deg,var(--green),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hd{font-size:1.15rem;color:var(--t2);max-width:640px;margin:0 auto 48px;line-height:1.7;animation:fu .8s var(--e) .2s both}
+.sr{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:var(--r);overflow:hidden;max-width:720px;margin:0 auto 48px;animation:fu .8s var(--e) .3s both}
+.sc{background:var(--bg2);padding:28px 20px;text-align:center;transition:background .3s}
+.sc:hover{background:var(--card2)}
+.sn{font-family:var(--fd);font-size:2.2rem;font-weight:700;letter-spacing:-.03em;margin-bottom:4px}
+.sn.g{color:var(--green)}.sn.b{color:var(--blue)}.sn.p{color:var(--purple)}.sn.o{color:var(--orange)}
+.sl{font-size:.8rem;color:var(--t3);font-weight:500}
+.sh{margin:80px 0 40px;text-align:center}
+.sh-tag{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+.sh-title{font-family:var(--fd);font-size:2rem;font-weight:700;margin-bottom:8px}
+.sh-desc{color:var(--t2);max-width:480px;margin:0 auto}
+/* Community Posts */
+.post-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:20px}
+.post{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px;transition:all .4s var(--e)}
+.post:hover{border-color:var(--border2);transform:translateY(-4px)}
+.post-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.post-ava{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.post-name{font-weight:600;font-size:.95rem}
+.post-time{font-size:.75rem;color:var(--t3)}
+.post-title{font-family:var(--fd);font-size:1.1rem;font-weight:600;margin-bottom:8px}
+.post-desc{font-size:.88rem;color:var(--t2);line-height:1.6;margin-bottom:16px}
+.post-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.pt{font-size:.72rem;padding:4px 10px;border-radius:6px;background:rgba(255,255,255,.04);color:var(--t3);border:1px solid var(--border)}
+.post-stats{display:flex;gap:16px;font-size:.82rem;color:var(--t3)}
+.ps{display:flex;align-items:center;gap:4px}
+/* Members */
+.member-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.member{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;text-align:center;transition:all .3s var(--e)}
+.member:hover{border-color:var(--border2);transform:translateY(-2px)}
+.member-ava{width:60px;height:60px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.member-name{font-weight:600;margin-bottom:4px}
+.member-role{font-size:.82rem;color:var(--t2);margin-bottom:8px}
+.member-tags{display:flex;gap:4px;justify-content:center;flex-wrap:wrap}
+.mt{font-size:.68rem;padding:2px 8px;border-radius:4px;background:rgba(0,214,143,.08);color:var(--green)}
+/* Events */
+.event-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.event{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px;transition:all .4s var(--e)}
+.event:hover{border-color:var(--border2);transform:translateY(-4px)}
+.event-date{font-family:var(--fd);font-size:2rem;font-weight:700;color:var(--green);margin-bottom:4px}
+.event-month{font-size:.82rem;color:var(--t3);margin-bottom:12px}
+.event-title{font-family:var(--fd);font-size:1.1rem;font-weight:600;margin-bottom:8px}
+.event-desc{font-size:.88rem;color:var(--t2);line-height:1.6;margin-bottom:16px}
+.event-meta{display:flex;gap:12px;font-size:.78rem;color:var(--t3)}
+footer{border-top:1px solid var(--border);padding:48px 0;position:relative;z-index:1}
+.ft-i{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+.ft-t{color:var(--t3);font-size:.82rem}
+.ft-l{display:flex;gap:24px}
+.ft-l a{color:var(--t3);text-decoration:none;font-size:.82rem;transition:color .2s}
+.ft-l a:hover{color:var(--t1)}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ci{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.ai{animation:ci .6s var(--e) both}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:3px}
+@media(max-width:768px){.sr{grid-template-columns:repeat(2,1fr)}.post-grid,.member-grid,.event-grid{grid-template-columns:1fr}.nav-lks{gap:16px}.nav-lk{font-size:.8rem}.ht{font-size:2rem}.c{padding:0 16px}}
+.mmb{display:none;background:none;border:none;color:var(--t1);font-size:1.4rem;cursor:pointer}
+@media(max-width:640px){.nav-lks{display:none}.mmb{display:block}.nav-lks.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:rgba(6,6,10,.98);padding:20px 32px;gap:16px;border-bottom:1px solid var(--border)}}
+</style>
+
+<meta name="description" content="加入全球OPC创业者社区，分享经验、寻找合伙人、发布项目需求，构建你的创业人脉网络。">
+<meta property="og:title" content="OPC 创业者社区 — 连接、分享、共赢">
+<meta property="og:description" content="加入全球OPC创业者社区，分享经验、寻找合伙人、发布项目需求，构建你的创业人脉网络。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mokangmedical.github.io/opc-platform/community.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mokangmedical.github.io/opc-platform/community.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+</head>
+<body>
+<!-- NAV -->
+<nav class="nav" id="nav">
+<div class="nav-i">
+<a href="index.html" class="nav-logo"><span class="mk">◆</span> OPC Platform</a>
+<div class="nav-links">
+<a href="service.html" class="nl">创业助手</a>
+<a href="platform.html" class="nl">平台</a>
+<a href="government.html" class="nl">揭榜挂帅</a>
+<a href="challenge.html" class="nl"><span class="zh">揭榜</span><span class="en" style="display:none">Challenge</span></a>
+<a href="superagent.html" class="nl">超级个体</a>
+<a href="legends.html" class="nl">名人堂</a>
+<a href="academy.html" class="nl">学院</a>
+<a href="policy.html" class="nl">政策</a>
+<a href="community.html" class="nl">社区</a>
+<button class="lg" onclick="togLang()">🌐 EN/中</button>
+</div>
+<button class="mob" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">☰</button>
+</div>
+</nav>
+
+    
+
+<section class="hero"><div class="hero-c">
+<div class="badge"><span style="width:6px;height:6px;border-radius:50%;background:var(--green)"></span> 独立创业者社区</div>
+<h1 class="ht">OPC <span class="g">社区</span></h1>
+<p class="hd">连接全球独立创业者，分享经验、寻找伙伴、共同成长。一个人走得快，一群人走得远。</p>
+<div class="sr">
+<div class="sc"><div class="sn g">2,847</div><div class="sl">社区成员</div></div>
+<div class="sc"><div class="sn b">1,234</div><div class="sl">讨论话题</div></div>
+<div class="sc"><div class="sn p">567</div><div class="sl">项目合作</div></div>
+<div class="sc"><div class="sn o">89</div><div class="sl">线下活动</div></div>
+</div>
+</div></section>
+
+<!-- 热门讨论 -->
+<section><div class="c">
+<div class="sh"><div class="sh-tag">HOT TOPICS</div><h2 class="sh-title">🔥 热门讨论</h2><p class="sh-desc">社区中最活跃的话题</p></div>
+<div class="post-grid" id="postGrid"></div>
+</div></section>
+
+<!-- 活跃成员 -->
+<section><div class="c">
+<div class="sh"><div class="sh-tag">ACTIVE MEMBERS</div><h2 class="sh-title">🌟 活跃成员</h2><p class="sh-desc">社区中最活跃的独立创业者</p></div>
+<div class="member-grid" id="memberGrid"></div>
+</div></section>
+
+<!-- 近期活动 -->
+<section><div class="c">
+<div class="sh"><div class="sh-tag">UPCOMING EVENTS</div><h2 class="sh-title">📅 近期活动</h2><p class="sh-desc">线上线下活动，拓展人脉</p></div>
+<div class="event-grid" id="eventGrid"></div>
+</div></section>
+
+<!-- Agent对接系统 -->
+<section><div class="c">
+<div class="sh"><div class="sh-tag">AGENT MATCHING</div><h2 class="sh-title">🤖 OPC创业者-Agent对接</h2><p class="sh-desc">找到最适合你的AI Agent助手，提升创业效率</p></div>
+
+<div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;margin-bottom:40px">
+<div style="text-align:center;margin-bottom:32px">
+<h3 style="font-family:var(--fd);font-size:1.5rem;font-weight:600;margin-bottom:8px">🎯 智能匹配你的专属Agent</h3>
+<p style="color:var(--t2);max-width:600px;margin:0 auto">根据你的创业阶段、技能领域、需求类型，AI自动匹配最适合的Agent助手</p>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px" id="agentGrid"></div>
+</div>
+
+<div style="background:linear-gradient(135deg,rgba(0,214,143,.1),rgba(78,168,222,.1));border:1px solid rgba(0,214,143,.2);border-radius:16px;padding:32px;text-align:center">
+<h3 style="font-family:var(--fd);font-size:1.3rem;font-weight:600;margin-bottom:12px">🚀 立即对接你的Agent</h3>
+<p style="color:var(--t2);margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto">填写你的需求，系统自动匹配最适合的Agent助手</p>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+<button class="btn" onclick="matchAgent()" style="padding:12px 32px;font-size:.95rem">🤖 智能匹配Agent</button>
+<button class="btn-o" onclick="browseAgents()" style="padding:12px 32px;font-size:.95rem">👀 浏览所有Agent</button>
+</div>
+</div>
+</div></section>
+
+<footer>
+    <div class="ft-i">
+      <div>
+        <div class="ft-brand"><span class="mk">◆</span> OPC Platform</div>
+        <p class="ft-desc">一站式OPC赋能平台，连接、展示、赋能全球独立创业者。一个人的公司，无限可能。</p>
+      </div>
+      <div class="ft-col">
+        <h4>平台</h4>
+        <a href="service.html">创业助手</a>
+        <a href="platform.html">全功能平台</a>
+        <a href="government.html">揭榜挂帅</a>
+        <a href="superagent.html">超级个体</a>
+      </div>
+      <div class="ft-col">
+        <h4>资源</h4>
+        <a href="legends.html">名人堂</a>
+        <a href="academy.html">学院</a>
+        <a href="policy.html">政策汇总</a>
+        <a href="community.html">社区</a>
+      </div>
+      <div class="ft-col">
+        <h4>支持</h4>
+        <a href="chat.html">实时聊天</a>
+        <a href="health.html">健康</a>
+        <a href="login.html">登录</a>
+        <a href="register.html">注册</a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 OPC Platform. All rights reserved.</span>
+      <div class="ft-social">
+        <a href="#">Twitter</a>
+        <a href="#">GitHub</a>
+        <a href="#">微信</a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+// 社区帖子数据 - 扩充版
+const POSTS=[
+// SaaS创业类
+{ava:"🧑‍💻",name:"张三",time:"2小时前",title:"我的第一个SaaS产品月入$5000的经验分享",desc:"从零开始，用了3个月时间，终于做到了月入$5000。分享一下我的完整经历和踩过的坑。技术栈：Next.js + Supabase + Stripe。获客主要靠Twitter公开构建和SEO。",tags:["SaaS","经验分享","公开构建"],likes:128,comments:45,shares:23,agent:"saas_agent"},
+{ava:"🚀",name:"Marc Chen",time:"4小时前",title:"一周发布一个MVP的方法论",desc:"我如何用7天时间从想法到上线。Day1：验证想法，Day2-3：核心功能，Day4-5：UI优化，Day6：测试，Day7：发布。Ship fast, iterate faster.",tags:["MVP","快速发布","方法论"],likes:234,comments:67,shares:45,agent:"ship_agent"},
+
+// 内容创作类
+{ava:"✍️",name:"李四",time:"5小时前",title:"如何从0开始写Newsletter并做到1万订阅",desc:"坚持写了6个月，从0到10000订阅者。内容策略：每周三篇，一篇深度、一篇工具推荐、一篇行业观察。增长技巧：SEO+Twitter+互推。",tags:["Newsletter","内容创作","增长"],likes:89,comments:32,shares:18,agent:"content_agent"},
+{ava:"📝",name:"Pat Zhang",time:"1天前",title:"用AI辅助写作，效率提升10倍",desc:"分享我用Claude/GPT辅助写作的工作流。大纲生成→初稿撰写→润色优化→配图生成。AI不是替代，是增强。",tags:["AI写作","效率","工具"],likes:167,comments:56,shares:34,agent:"ai_agent"},
+
+// AI产品类
+{ava:"🤖",name:"王五",time:"1天前",title:"用AI做了个小工具，意外月入$3000",desc:"本来只是解决自己的问题，没想到很多人也需要。分享一下如何用AI快速构建MVP。产品：AI自动生成周报工具。技术：Python + OpenAI API + Vercel。",tags:["AI产品","MVP","独立开发"],likes:256,comments:78,shares:45,agent:"ai_agent"},
+{ava:"💡",name:"Sarah Li",time:"2天前",title:"AI Agent创业的3个方向",desc:"分析了当前AI Agent创业的3个机会：1）垂直领域Agent（法律、医疗、教育），2）Agent开发工具，3）Agent协作平台。附市场规模分析。",tags:["AI Agent","创业方向","市场分析"],likes:312,comments:89,shares:67,agent:"ai_agent"},
+
+// 财务管理类
+{ava:"📊",name:"赵六",time:"2天前",title:"一人公司如何做财务规划和税务优化",desc:"作为独立创业者，财务管理是最容易被忽视的。分享我的财务规划方法：1）分离个人和公司账户，2）季度预缴税款，3）合理利用税收优惠，4）建立应急基金。",tags:["财务管理","一人公司","税务"],likes:67,comments:28,shares:12,agent:"finance_agent"},
+{ava:"💰",name:"David Wang",time:"3天前",title:"独立开发者如何定价？我的定价框架",desc:"分享我的SaaS定价框架：1）价值定价而非成本定价，2）提供3个价格档位，3）免费版吸引用户，4）年付优惠促进留存。附实际案例分析。",tags:["定价","SaaS","策略"],likes:145,comments:45,shares:28,agent:"saas_agent"},
+
+// 转型类
+{ava:"🎨",name:"钱七",time:"3天前",title:"从设计师到年入百万的独立创业者",desc:"离开大厂后，如何用设计技能构建多个收入来源。收入构成：SaaS产品40%、设计模板30%、咨询服务20%、课程10%。关键：建立个人品牌。",tags:["设计","收入多元化","转型"],likes:145,comments:56,shares:34,agent:"career_agent"},
+{ava:"🔧",name:"Tony Wu",time:"4天前",title:"从程序员到独立开发者的转型之路",desc:"在大厂写了5年代码，辞职后做了3个产品，2个失败，1个成功。总结：1）先验证再开发，2）做自己会用的产品，3）公开构建获取反馈。",tags:["转型","程序员","经验"],likes:267,comments:78,shares:56,agent:"career_agent"},
+
+// 产品发布类
+{ava:"🚀",name:"孙八",time:"4天前",title:"Product Hunt首发第一名的经验总结",desc:"如何在Product Hunt上成功发布产品，获得首批1000用户。准备工作：1）提前2周预热，2）准备好所有素材，3）发动社区支持，4）实时回复评论。",tags:["Product Hunt","产品发布","增长黑客"],likes:198,comments:67,shares:41,agent:"ship_agent"},
+{ava:"📱",name:"Lisa Chen",time:"5天前",title:"我的App Store优化(ASO)策略",desc:"分享如何通过ASO让App自然下载量提升300%。关键词优化、截图设计、评论管理、本地化。附工具推荐和数据对比。",tags:["ASO","App","增长"],likes:134,comments:45,shares:23,agent:"ship_agent"},
+
+// 远程工作类
+{ava:"🌍",name:"Mike Liu",time:"5天前",title:"数字游民生活3年的真实体验",desc:"在东南亚、欧洲、南美远程工作3年的真实感受。优点：自由、低成本、新体验。缺点：时差、孤独、不稳定。建议：先在国内远程半年再考虑。",tags:["数字游民","远程工作","生活方式"],likes:189,comments:67,shares:45,agent:"lifestyle_agent"},
+{ava:"⏰",name:"Amy Zhang",time:"6天前",title:"一人公司的时间管理方法",desc:"作为一人公司，时间是最宝贵的资源。分享我的时间管理：1）主题日（周一产品、周二营销、周三内容...），2）番茄工作法，3）每周复盘。",tags:["时间管理","效率","一人公司"],likes:156,comments:34,shares:23,agent:"productivity_agent"},
+
+// 心理健康类
+{ava:"🧠",name:"Dr. Wei",time:"6天前",title:"独立创业者的心理健康指南",desc:"创业压力大，容易焦虑和孤独。分享我的应对方法：1）建立日常routine，2）加入创业社群，3）定期运动，4）必要时寻求专业帮助。",tags:["心理健康","压力管理","自我关怀"],likes:234,comments:89,shares:56,agent:"wellness_agent"},
+{ava:"💪",name:"Jennifer Li",time:"1周前",title:"创业失败后如何重新站起来",desc:"我的第一个产品失败了，花了6个月才走出来。分享我的恢复过程：1）允许自己难过，2）复盘失败原因，3）从小项目重新开始，4）保持健康习惯。",tags:["失败","韧性","心理健康"],likes:345,comments:123,shares:78,agent:"wellness_agent"}
+];
+
+// 活跃成员数据 - 扩充版
+const MEMBERS=[
+{ava:"🧑‍💻",name:"Pieter Levels",role:"SaaS连续创业者",tags:["SaaS","远程","公开构建"],agent:"saas_agent",desc:"70+产品，4个百万级业务"},
+{ava:"✍️",name:"James Clear",role:"习惯养成大师",tags:["写作","习惯","Newsletter"],agent:"content_agent",desc:"《原子习惯》作者，1500万册"},
+{ava:"🤖",name:"Marc Lou",role:"AI产品构建者",tags:["AI","快速发布","独立黑客"],agent:"ship_agent",desc:"2年发布20+产品的极速发布者"},
+{ava:"📊",name:"Naval Ravikant",role:"投资哲学家",tags:["投资","杠杆","哲学"],agent:"finance_agent",desc:"AngelList联合创始人，身价$10亿+"},
+{ava:"🎨",name:"Sahil Lavingia",role:"极简创始人",tags:["Gumroad","创作","极简"],agent:"career_agent",desc:"Gumroad创始人，小即是美"},
+{ava:"🚀",name:"Tony Dinh",role:"独立开发者",tags:["开发工具","越南","TypingMind"],agent:"ship_agent",desc:"越南独立开发者，年入$40万+"},
+{ava:"📚",name:"Ali Abdaal",role:"生产力导师",tags:["YouTube","教育","生产力"],agent:"productivity_agent",desc:"医生转型YouTuber，500万订阅"},
+{ava:"🔧",name:"Jon Yongfook",role:"API工匠",tags:["API","东京","Bannerbear"],agent:"saas_agent",desc:"东京独立开发者，年入$50万+"},
+{ava:"🎵",name:"Derek Sivers",role:"哲学家创业者",tags:["哲学","CD Baby","极简"],agent:"wellness_agent",desc:"CD Baby创始人，$2200万退出"},
+{ava:"📖",name:"Tim Ferriss",role:"元学习者",tags:["播客","投资","4小时工作周"],agent:"productivity_agent",desc:"《每周工作4小时》作者"},
+{ava:"🎯",name:"Daniel Vassallo",role:"小赌注策略家",tags:["AWS","小赌注","投资组合"],agent:"finance_agent",desc:"放弃$50万年薪做小赌注"},
+{ava:"📢",name:"KP",role:"公开构建教练",tags:["Twitter","社区","Build in Public"],agent:"content_agent",desc:"公开构建的布道者"},
+{ava:"🧬",name:"Anne-Laure Le Cunff",role:"神经科学创业者",tags:["Ness Labs","正念","脑科学"],agent:"wellness_agent",desc:"离开谷歌研究脑科学创业"},
+{ava:"📰",name:"Pat Walls",role:"创业故事构建者",tags:["Starter Story","SEO","创始人访谈"],agent:"content_agent",desc:"采访3000+创始人的内容机器"},
+{ava:"🎮",name:"Pieter Levels",role:"数字游民缔造者",tags:["Nomad List","远程","社区"],agent:"lifestyle_agent",desc:"数字游民社区的缔造者"},
+{ava:"💡",name:"Jack Butcher",role:"视觉价值创造者",tags:["Visualize Value","NFT","视觉思维"],agent:"content_agent",desc:"用Figma构建视觉帝国"}
+];
+
+// 近期活动数据 - 扩充版
+const EVENTS=[
+{day:"25",month:"4月 2026",title:"OPC创业者线上交流会",desc:"每月一次的线上交流，分享近期进展和遇到的问题。本期主题：如何用AI提升一人公司效率。",meta:["📍 线上Zoom","⏰ 晚8:00","👥 限50人","🎯 主题分享+自由交流"]},
+{day:"28",month:"4月 2026",title:"AI产品快速构建工作坊",desc:"手把手教你用AI工具在3天内构建一个可用产品。包括：需求分析、原型设计、代码生成、部署上线。",meta:["📍 线上直播","⏰ 全天","👥 限100人","🛠️ 实操演练"]},
+{day:"5",month:"5月 2026",title:"北京OPC创业者线下聚会",desc:"北京地区的独立创业者线下见面，networking和经验分享。免费参加，提供茶歇。",meta:["📍 北京朝阳","⏰ 下午2:00","👥 限30人","☕ 免费茶歇"]},
+{day:"8",month:"5月 2026",title:"SaaS定价策略深度分享",desc:"如何为你的SaaS产品定价，最大化收入和用户增长。案例分析+实操练习。",meta:["📍 线上直播","⏰ 晚8:00","👥 限80人","💰 定价计算器"]},
+{day:"12",month:"5月 2026",title:"上海OPC创业者线下聚会",desc:"上海地区的独立创业者线下见面，深度交流和资源对接。",meta:["📍 上海浦东","⏰ 下午2:00","👥 限30人","🤝 资源对接"]},
+{day:"15",month:"5月 2026",title:"Newsletter变现策略分享会",desc:"如何通过Newsletter构建忠实受众并实现变现。从0到1万订阅的完整路径。",meta:["📍 线上直播","⏰ 晚8:00","👥 限100人","📧 订阅增长"]},
+{day:"18",month:"5月 2026",title:"独立开发者技术栈分享",desc:"全栈开发、部署运维、监控报警一站式。适合有一定基础的开发者。",meta:["📍 线上直播","⏰ 晚8:00","👥 限80人","💻 代码实战"]},
+{day:"22",month:"5月 2026",title:"深圳OPC创业者线下聚会",desc:"深圳地区的独立创业者线下见面，聚焦硬件+软件结合的创业方向。",meta:["📍 深圳南山","⏰ 下午2:00","👥 限30人","🔧 硬件创业"]},
+{day:"25",month:"5月 2026",title:"一人公司财务管理实战",desc:"作为独立创业者，如何做好财务规划、税务优化、成本控制。",meta:["📍 线上直播","⏰ 晚8:00","👥 限80人","📊 财务模板"]},
+{day:"28",month:"5月 2026",title:"Product Hunt发布策略",desc:"如何在Product Hunt上成功发布产品，获得首批1000用户。",meta:["📍 线上直播","⏰ 晚8:00","👥 限100人","🚀 发布清单"]}
+    ];
+
+    // ===== API Configuration =====
+    const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:8000/api' : '/api';
+
+    // ===== Render Functions =====
+    function renderPosts(posts) {
+        const grid = document.getElementById('postGrid');
+        if (!posts.length) { grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--t3)">暂无讨论</div>'; return; }
+        grid.innerHTML = posts.map((p,i) => `
+        <div class="post ai" style="animation-delay:${i*0.08}s">
+        <div class="post-head">
+        <div class="post-ava" style="background:rgba(0,214,143,.12)">${p.ava || p.avatar_emoji || '💬'}</div>
+        <div><div class="post-name">${p.name}</div><div class="post-time">${p.time || p.created_at || ''}</div></div>
+        </div>
+        <div class="post-title">${p.title}</div>
+        <p class="post-desc">${p.desc || p.content || ''}</p>
+        <div class="post-tags">${(p.tags||[]).map(t=>`<span class="pt">${t}</span>`).join('')}</div>
+        <div class="post-stats">
+        <div class="ps">❤️ ${p.likes || 0}</div>
+        <div class="ps">💬 ${p.comments || 0}</div>
+        <div class="ps">🔄 ${p.shares || 0}</div>
+        </div>
+        </div>`).join('');
+    }
+
+    function renderMembers(members) {
+        const grid = document.getElementById('memberGrid');
+        if (!members.length) { grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--t3)">暂无成员</div>'; return; }
+        grid.innerHTML = members.map((m,i) => `
+        <div class="member ai" style="animation-delay:${i*0.06}s">
+        <div class="member-ava" style="background:rgba(0,214,143,.12)">${m.ava || m.avatar_emoji || '👤'}</div>
+        <div class="member-name">${m.name}</div>
+        <div class="member-role">${m.role || m.title || ''}</div>
+        <div class="member-tags">${(m.tags||[]).map(t=>`<span class="mt">${t}</span>`).join('')}</div>
+        </div>`).join('');
+    }
+
+    function renderEvents(events) {
+        const grid = document.getElementById('eventGrid');
+        if (!events.length) { grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--t3)">暂无活动</div>'; return; }
+        grid.innerHTML = events.map((e,i) => `
+        <div class="event ai" style="animation-delay:${i*0.08}s">
+        <div class="event-date">${e.day || ''}</div>
+        <div class="event-month">${e.month || ''}</div>
+        <div class="event-title">${e.title}</div>
+        <p class="event-desc">${e.desc || e.description || ''}</p>
+        <div class="event-meta">${(e.meta||[]).map(m=>`<span>${m}</span>`).join('')}</div>
+        </div>`).join('');
+    }
+
+    // ========== Agent对接系统 ==========
+    let allAgents = AGENTS; // mutable list refreshed from API
+
+    function renderAgents(agents) {
+        const grid = document.getElementById('agentGrid');
+        const list = agents || allAgents;
+        grid.innerHTML = list.map((a,i) => `
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;transition:all .3s var(--e);cursor:pointer" onclick="connectAgent('${a.id}')" onmouseover="this.style.borderColor='${a.color}44'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+        <div style="width:48px;height:48px;border-radius:12px;background:${a.color}22;display:flex;align-items:center;justify-content:center;font-size:1.5rem">${a.icon}</div>
+        <div>
+        <div style="font-weight:600;font-size:.95rem">${a.name}</div>
+        <div style="font-size:.75rem;color:var(--green)">● 在线</div>
+        </div>
+        </div>
+        <p style="font-size:.82rem;color:var(--t2);line-height:1.5;margin-bottom:12px">${a.desc}</p>
+        <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px">
+        ${a.skills.slice(0,3).map(s=>`<span style="font-size:.68rem;padding:2px 8px;border-radius:4px;background:rgba(255,255,255,.04);color:var(--t3)">${s}</span>`).join('')}
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:.78rem;color:var(--t3)">匹配度: <span style="color:${a.color};font-weight:600">${a.match_score}%</span></div>
+        <button style="background:${a.color};border:none;color:#fff;padding:6px 12px;border-radius:6px;font-size:.75rem;cursor:pointer">对接</button>
+        </div>
+        </div>
+        `).join('');
+    }
+
+    // ===== Load Data =====
+    async function loadCommunityData() {
+        const postGrid = document.getElementById('postGrid');
+        const memberGrid = document.getElementById('memberGrid');
+        const eventGrid = document.getElementById('eventGrid');
+        const agentGrid = document.getElementById('agentGrid');
+        // Show loading states
+        postGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--t3)">⏳ 加载中...</div>';
+        memberGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--t3)">⏳ 加载中...</div>';
+        eventGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--t3)">⏳ 加载中...</div>';
+        agentGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--t3)">⏳ 加载中...</div>';
+
+        // Load posts
+        try {
+            const resp = await fetch(`${API_BASE}/community/posts`);
+            const data = await resp.json();
+            renderPosts(data.posts || data || POSTS);
+        } catch(e) { console.log('Posts API unavailable, using fallback'); renderPosts(POSTS); }
+
+        // Load members
+        try {
+            const resp = await fetch(`${API_BASE}/community/members`);
+            const data = await resp.json();
+            renderMembers(data.members || data || MEMBERS);
+        } catch(e) { console.log('Members API unavailable, using fallback'); renderMembers(MEMBERS); }
+
+        // Load events
+        try {
+            const resp = await fetch(`${API_BASE}/community/events`);
+            const data = await resp.json();
+            renderEvents(data.events || data || EVENTS);
+        } catch(e) { console.log('Events API unavailable, using fallback'); renderEvents(EVENTS); }
+
+        // Load agents
+        try {
+            const resp = await fetch(`${API_BASE}/community/agents`);
+            const data = await resp.json();
+            allAgents = data.agents || data || AGENTS;
+        } catch(e) { console.log('Agents API unavailable, using fallback'); allAgents = AGENTS; }
+        renderAgents(allAgents);
+
+        // Update stats from real data if stats endpoint exists
+        try {
+            const resp = await fetch(`${API_BASE}/community/stats`);
+            const data = await resp.json();
+            // Update hero stats
+            const stats = data.stats || data;
+            let ri = 0;
+            document.querySelectorAll('.sn').forEach(el => {
+                const vals = [stats.members || stats.member_count, stats.posts || stats.post_count, stats.projects || stats.project_count, stats.events || stats.event_count];
+                if (vals[ri] !== undefined) el.textContent = Number(vals[ri]).toLocaleString();
+                ri++;
+            });
+        } catch(e) { console.log('Stats API unavailable'); }
+    }
+
+    function connectAgent(agentId) {
+        const agent = allAgents.find(a => a.id === agentId);
+        if (!agent) return;
+const modal=document.createElement('div');
+modal.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px';
+modal.innerHTML=`
+<div style="background:var(--card);border-radius:16px;padding:32px;max-width:500px;width:100%">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px">
+<h2 style="font-size:1.3rem">${agent.icon} ${agent.name}</h2>
+<button onclick="this.parentElement.parentElement.parentElement.remove()" style="background:none;border:none;color:var(--t2);font-size:1.5rem;cursor:pointer">×</button>
+</div>
+<div style="margin-bottom:20px">
+<div style="font-size:.9rem;color:var(--t2);margin-bottom:12px">${agent.desc}</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap">
+${agent.skills.map(s=>`<span style="font-size:.75rem;padding:4px 10px;border-radius:6px;background:${agent.color}22;color:${agent.color}">${s}</span>`).join('')}
+</div>
+</div>
+<div style="margin-bottom:20px">
+<div style="font-size:.82rem;font-weight:600;margin-bottom:8px">📝 你的需求描述</div>
+<textarea id="agentNeed" style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px;color:var(--t1);font-size:.88rem;resize:vertical;min-height:100px;font-family:var(--fb)" placeholder="请描述你的具体需求，例如：我想做一个SaaS产品，需要帮助确定产品方向和技术栈..."></textarea>
+</div>
+<div style="display:flex;gap:12px">
+<button onclick="submitAgentRequest('${agent.id}')" style="flex:1;background:${agent.color};border:none;color:#fff;padding:12px;border-radius:8px;font-size:.88rem;font-weight:600;cursor:pointer">提交对接请求</button>
+<button onclick="this.parentElement.parentElement.parentElement.remove()" style="flex:1;background:transparent;border:1px solid var(--border);color:var(--t2);padding:12px;border-radius:8px;font-size:.88rem;cursor:pointer">取消</button>
+</div>
+</div>
+`;
+document.body.appendChild(modal);
+}
+
+// 提交Agent对接请求
+function submitAgentRequest(agentId){
+const need=document.getElementById('agentNeed').value.trim();
+if(!need){
+alert('请描述你的需求');
+return;
+}
+const agent=AGENTS.find(a=>a.id===agentId);
+alert(`✅ 对接请求已提交！\n\nAgent：${agent.name}\n需求：${need.substring(0,50)}...\n\n我们将在24小时内安排Agent与你对接。\n\n请添加客服微信：OPC-Agent`);
+document.querySelector('[style*="position:fixed"][style*="z-index:9999"]').remove();
+}
+
+// 智能匹配Agent
+function matchAgent(){
+const modal=document.createElement('div');
+modal.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px';
+modal.innerHTML=`
+<div style="background:var(--card);border-radius:16px;padding:32px;max-width:600px;width:100%">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px">
+<h2 style="font-size:1.3rem">🤖 智能匹配Agent</h2>
+<button onclick="this.parentElement.parentElement.parentElement.remove()" style="background:none;border:none;color:var(--t2);font-size:1.5rem;cursor:pointer">×</button>
+</div>
+<div style="margin-bottom:20px">
+<div style="font-size:.82rem;font-weight:600;margin-bottom:8px">1️⃣ 你的创业阶段</div>
+<select id="matchStage" style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px;color:var(--t1);font-size:.88rem">
+<option value="idea">💡 想法阶段</option>
+<option value="mvp">🛠️ MVP阶段</option>
+<option value="growth">📈 增长阶段</option>
+<option value="scale">🚀 规模化阶段</option>
+</select>
+</div>
+<div style="margin-bottom:20px">
+<div style="font-size:.82rem;font-weight:600;margin-bottom:8px">2️⃣ 你的主要需求</div>
+<select id="matchNeed" style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px;color:var(--t1);font-size:.88rem">
+<option value="product">🧑‍💻 产品开发</option>
+<option value="content">✍️ 内容创作</option>
+<option value="finance">📊 财务管理</option>
+<option value="growth">📈 增长获客</option>
+<option value="ai">🤖 AI技术</option>
+<option value="career">🎨 职业转型</option>
+<option value="wellness">🧠 身心健康</option>
+</select>
+</div>
+<div style="margin-bottom:20px">
+<div style="font-size:.82rem;font-weight:600;margin-bottom:8px">3️⃣ 补充描述</div>
+<textarea id="matchDesc" style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px;color:var(--t1);font-size:.88rem;resize:vertical;min-height:80px;font-family:var(--fb)" placeholder="可选：补充描述你的具体情况..."></textarea>
+</div>
+<button onclick="executeMatch()" style="width:100%;background:linear-gradient(135deg,var(--green),var(--blue));border:none;color:#fff;padding:14px;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer">🔍 开始匹配</button>
+</div>
+`;
+document.body.appendChild(modal);
+}
+
+// 执行匹配
+function executeMatch(){
+const stage=document.getElementById('matchStage').value;
+const need=document.getElementById('matchNeed').value;
+const desc=document.getElementById('matchDesc').value;
+
+// 简单匹配逻辑
+let matchedAgent;
+if(need==='product'&&stage==='idea')matchedAgent='saas_agent';
+else if(need==='product'&&stage==='mvp')matchedAgent='ship_agent';
+else if(need==='content')matchedAgent='content_agent';
+else if(need==='finance')matchedAgent='finance_agent';
+else if(need==='ai')matchedAgent='ai_agent';
+else if(need==='career')matchedAgent='career_agent';
+else if(need==='wellness')matchedAgent='wellness_agent';
+else if(need==='growth')matchedAgent='ship_agent';
+else matchedAgent='saas_agent';
+
+const agent=AGENTS.find(a=>a.id===matchedAgent);
+document.querySelector('[style*="position:fixed"][style*="z-index:9999"]').remove();
+connectAgent(matchedAgent);
+}
+
+// 浏览所有Agent
+function browseAgents(){
+window.scrollTo({top:document.getElementById('agentGrid').offsetTop-100,behavior:'smooth'});
+}
+
+renderAgents();
+
+</body></html>
