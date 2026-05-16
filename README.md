@@ -77,6 +77,33 @@ OPC Platform 是 MoKangMedical 生态的核心枢纽，整合了以下模块：
 | 前端 | 原生 HTML/CSS/JavaScript，深色主题，响应式 |
 | 部署 | Render.com / 自托管 |
 
+## 🔌 OpenClaw 集成（可选）
+
+OPC Platform 可与 [OpenClaw](https://github.com/openclaw/openclaw) 深度集成，提供：
+
+- **事件驱动自动化**: 将平台事件（项目投标、课程完成、健康打卡）发布到 OpenClaw EventBus
+- **智能任务编排**: 通过 OpenClaw Algorithm 进行复杂任务分解与执行（如自动生成课程计划）
+- **监控与历史**: OpenClaw Pulse 提供系统健康监控与事件历史查询
+
+### 环境配置
+
+- 确保 OpenClaw 工作区可用（默认 `~/.openclaw/workspace`）
+- 设置环境变量 `OPENCLA_WORKSPACE` 指向 OpenClaw 根目录
+- OpenClaw 算法技能必须安装（`.agents/skills/algorithm`）
+
+### API 端点
+
+新增前缀 `/openclaw`：
+
+- `POST /openclaw/event/emit` — 发射事件
+- `POST /openclaw/event/query` — 查询历史
+- `GET /openclaw/event/count` — 计数
+- `GET /openclaw/event/groupBy?field=type` — 分组统计
+- `POST /openclaw/algorithm/run` — 运行算法编排
+- `GET /openclaw/status` — 集成健康检查
+
+📖 详见 [OpenClaw 集成文档](docs/OPENCLAW_INTEGRATION.md)
+
 ## 📦 快速开始
 
 ```bash

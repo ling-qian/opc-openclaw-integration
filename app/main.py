@@ -2,10 +2,16 @@
 OPC Platform - 统一后端服务
 6大模块: 揭榜挂帅 + 超级个体 + 名人堂 + 学院 + 健康 + 社区
 """
+import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 import os
+
+from app.logging_config import setup_logging
+
+# Setup logging
+logger = setup_logging()
 
 from app.database import init_db, engine, Base
 from app.models import *  # Import all models
@@ -41,6 +47,7 @@ from app.routes.payment import router as payment_router
 from app.routes.government import router as government_router
 from app.routes.reviews import router as reviews_router
 from app.routes.sync import router as sync_router
+from app.routes.openclaw import router as openclaw_router
 
 app.include_router(academy_router)
 app.include_router(health_router)
@@ -57,6 +64,7 @@ app.include_router(payment_router)
 app.include_router(government_router)
 app.include_router(reviews_router)
 app.include_router(sync_router)
+app.include_router(openclaw_router)
 
 # 健康检查
 @app.get("/api/health")
@@ -87,7 +95,7 @@ async def platform_stats():
 @app.on_event("startup")
 async def startup():
     Base.metadata.create_all(bind=engine)
-    print("✅ Database initialized")
+    logger.info("Database initialized")
     
     # 自动seed数据
     from app.database import SessionLocal
@@ -95,7 +103,7 @@ async def startup():
     db = SessionLocal()
     try:
         if db.query(Project).count() == 0:
-            print("📦 Seeding initial data...")
+            logger.info("Seeding initial data...")
             # Seed projects from JSON
             import json
             data_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "jiangsu_ai_scenarios.json")
@@ -118,9 +126,9 @@ async def startup():
                     )
                     db.add(proj)
                 db.commit()
-                print(f"✅ Seeded {len(projects)} projects")
+                logger.info(f"Seeded {len(projects)} projects")
     except Exception as e:
-        print(f"⚠️ Seed error: {e}")
+        logger.warning(f"Seed error: {e}")
     finally:
         db.close()
 
@@ -129,4 +137,4 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 docs_dir = os.path.join(BASE_DIR, "docs")
 if os.path.exists(docs_dir):
     app.mount("/", StaticFiles(directory=docs_dir, html=True), name="frontend")
-    print(f"✅ Static files: {docs_dir}")
+    logger.info(f"Static files: {docs_dir}")
