@@ -2,6 +2,10 @@
 
 一站式OPC（One Person Company）统一平台，合并了 7 个核心子项目，为独立创业者提供项目对接、技能匹配、在线学习、健康管理、社群互动的完整生态。
 
+[![CI Status](https://github.com/ling-qian/opc-openclaw-integration/workflows/CI/badge.svg)](https://github.com/ling-qian/opc-openclaw-integration/actions)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## 🚀 平台概述
 
 OPC Platform 是 MoKangMedical 生态的核心枢纽，整合了以下模块：
@@ -202,6 +206,87 @@ opc-platform/
 ```
 
 ⭐ = 本次合并新增
+
+## 🚀 部署指南
+
+### 方式一：本地/自托管（推荐用于production）
+
+```bash
+# 克隆仓库
+ git clone https://github.com/ling-qian/opc-openclaw-integration.git
+ cd opc-openclaw-integration
+
+# 安装依赖
+ pip install -r requirements.txt
+
+# 设置环境变量（可选）
+ export OPENCLA_WORKSPACE=/path/to/openclaw/workspace
+ export OPENCLA_PULSE_URL=http://127.0.0.1:31337
+
+# 启动服务
+ uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+# API 文档: http://localhost:8000/docs
+# 前端: http://localhost:8000
+```
+
+**systemd 服务**（生产环境）：
+
+```ini
+# /etc/systemd/system/opc-integration.service
+[Unit]
+Description=OPC OpenClaw Integration
+After=network.target
+
+[Service]
+Type=simple
+User=tom
+WorkingDirectory=/opt/opc-integration
+Environment="OPENCLA_WORKSPACE=/home/tom/.openclaw/workspace"
+ExecStart=/usr/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```bash
+ sudo systemctl daemon-reload
+ sudo systemctl enable opc-integration
+ sudo systemctl start opc-integration
+ sudo systemctl status opc-integration
+```
+
+---
+
+### 方式二：Railway / Render（云托管）
+
+- 连接 GitHub 仓库 `ling-qian/opc-openclaw-integration`
+- 选择 **Python** 模板（Railway 自动检测）
+- Render 启动命令: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+- 添加环境变量 `OPENCLA_WORKSPACE` 等
+- 自动 HTTPS 上线
+
+---
+
+### 方式三：GitHub Actions 自动部署（SSH）
+
+推送至 `main` 分支会自动部署到你的服务器（需预先配置）：
+
+1. 在服务器准备 `/opt/opc-integration` 并克隆仓库
+2. 创建 systemd 服务（见方式一）
+3. 在 GitHub Secrets 添加：
+   - `SSH_PRIVATE_KEY`（服务器私钥）
+   - `DEPLOY_HOST`（服务器IP/域名）
+   - `DEPLOY_USER`（SSH用户名）
+4. 每次 `git push origin main` 会自动执行：
+   ```bash
+   git pull && pip install -r requirements.txt && systemctl restart opc-integration
+   ```
+
+详见 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)
+
+---
 
 ## 🏗️ 合并记录
 

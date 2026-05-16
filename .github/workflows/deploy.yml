@@ -1,0 +1,45 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup SSH
+      uses: webfactory/ssh-agent@v0.5.4
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Add known hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
+
+    - name: Deploy to server
+      run: |
+        ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} << 'EOF'
+          set -e  # exit on error
+          cd /opt/opc-integration
+          echo "Pulling latest code..."
+          git pull origin main
+          echo "Installing dependencies..."
+          pip3 install -r requirements.txt
+          echo "Restarting service..."
+          sudo systemctl restart opc-integration
+          echo "Checking service status..."
+          sudo systemctl status opc-integration --no-pager -l
+          echo "✅ Deployed successfully"
+        EOF
+
+    - name: Notify success
+      if: success()
+      run: |
+        echo "🚀 Deployment to ${{ secrets.DEPLOY_HOST }} completed!"
